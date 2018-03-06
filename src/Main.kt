@@ -2,6 +2,8 @@ fun main(args: Array<String>) { //TODO: Take into account numbers before the fra
     println("GrowthNDecay: does stuff on weird y = mx + b memes")
     val calc = Calc()
     while(true) {
+        print("Enter Initial number(if number isn't there, or there is just a negative symbol, enter 1 / -1): ")
+        val num: Double = readLine()?.toDouble() ?: 1.0
         print("Enter numerator: ")
         val numerator: Double = readLine()?.toDouble() ?: 0.0
         print("Enter denominator(if denominator isn't provided, enter 1): ")
@@ -12,7 +14,7 @@ fun main(args: Array<String>) { //TODO: Take into account numbers before the fra
         val expo: Double = readLine()?.toDouble() ?: 0.0
         println("Base: $numerator / $denominator")
         println("Growth? " + calc.isGrowth(numerator, denominator))
-        println("Above or below? " + calc.above(numerator))
-        println("Y-intercept: " + calc.yint(numerator, denominator, yint, expo))
+        println("Above or below? " + calc.above(num))
+        println("Y-intercept: " + calc.yint(num, numerator, denominator, yint, expo))
     }
 }
