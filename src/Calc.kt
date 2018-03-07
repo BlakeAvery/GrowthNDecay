@@ -6,7 +6,6 @@ class Calc {
         return if(num > 0.0) "above" else "below"
     }
     fun yint(num: Double, wan: Double, tsuu: Double, intercept: Double, expo: Double): Double {
-        //TODO: Implement!
-        return 0.0
+        return if(intercept == 1.0) intercept else Math.pow((wan / tsuu), expo) * num + intercept
     }
 }
